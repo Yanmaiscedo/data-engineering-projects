@@ -1,15 +1,15 @@
 # Etapas
 
 
-### 1. [Etapa I](/Sprint%201/Desafio/Etapa%20-%201/Diagrama%20sem%20nome%20imgem.jpg)
+### 1. [Etapa I](/Sprint%201/Projeto/Etapa%20-%201/Diagrama%20sem%20nome%20imgem.jpg)
 
 Na Primeira etapa houve a identificação do problema, que era o fato de so haver uma tabela no banco de dados e todos os campos estarem misturados nela. Tendo em vista a problematica e com o intuito de facilitar a visualização do sistema normalizado, a primeira coisa feita foi o Diagrama relacional, que permitiu uma visualização clara das tabelas, de onde cada campo deveria fica e como elas iriam se relacionar
 
-![Diagrama](/Sprint%201/Desafio/Etapa%20-%201/Diagrama%20sem%20nome%20imgem.jpg)
+![Diagrama](/Sprint%201/Projeto/Etapa%20-%201/Diagrama%20sem%20nome%20imgem.jpg)
 
 ---
 
-### 2. [Etapa II](/Sprint%201/Desafio/Etapa%20-%202/CriancaoTabelas.sql)
+### 2. [Etapa II](/Sprint%201/Projeto/Etapa%20-%202/CriancaoTabelas.sql)
 
 Após ter feito o diagrama relacional, fica mais facil ir para a segunda etapa, que é a criação das novas Tabelas:
 
@@ -64,11 +64,11 @@ CREATE TABLE locacoes (
 
 ### Evidencias do codigo
 
-![amostra](/Sprint%201/Evidencias/Desafio%20-%20Sprint%201/Codigo1.png)
+![amostra](/Sprint%201/Evidencias/Projeto%20-%20Sprint%201/Codigo1.png)
 
 ---
 
-### 3. [Etapa III](/Sprint%201/Desafio/Etapa%20-%203/InsercaoDados.sql)
+### 3. [Etapa III](/Sprint%201/Projeto/Etapa%20-%203/InsercaoDados.sql)
 
 Após a criação das tabelas, o proximo passo foi a inserção de dados, da tabela locacao antiga para as novas tabelas e depois que os dados foram tranferidos, foi feita a exclusão da antiga tabela não normalizada:
 
@@ -122,11 +122,11 @@ DROP TABLE  tb_locacao
  ```
 ### Evidencias do codigo
 
-![amostra2](/Sprint%201/Evidencias/Desafio%20-%20Sprint%201/Codigo2.png)
+![amostra2](/Sprint%201/Evidencias/Projeto%20-%20Sprint%201/Codigo2.png)
 
 ---
 
-### 4. [Etapa IV](/Sprint%201/Desafio/Etapa%20-%204/CriacaoViews.sql)
+### 4. [Etapa IV](/Sprint%201/Projeto/Etapa%20-%204/CriacaoViews.sql)
 
 Apos a criação do diagrama relacional, criação das tabelas e a passagem de dados, o ultimo passo é a dimencionalização por meio da criação de views:
  ```sql
@@ -215,4 +215,4 @@ GROUP BY idCliente;
 ```
 ### Evidencias do codigo
 
-![amostra2](/Sprint%201/Evidencias/Desafio%20-%20Sprint%201/Codigo3.png)
+![amostra2](/Sprint%201/Evidencias/Projeto%20-%20Sprint%201/Codigo3.png)
