@@ -1,9 +1,43 @@
-# Etapas
+# 📌 Introdução
 
+Este projeto tem como objetivo aplicar conceitos de **modelagem de dados relacional** e **normalização de banco de dados**, a partir de um cenário real onde os dados estavam originalmente concentrados em uma única tabela não estruturada.
+
+A partir desse problema inicial, foi realizado um processo completo de reestruturação dos dados, incluindo:
+
+* Identificação de inconsistências e redundâncias
+* Criação de um **diagrama relacional**
+* Separação dos dados em entidades normalizadas
+* Definição de chaves primárias e estrangeiras
+* Migração dos dados para o novo modelo
+* Criação de **views** para facilitar consultas analíticas
+
+O projeto simula uma base de dados de **locação de veículos**, envolvendo entidades como clientes, carros, vendedores e combustíveis, permitindo explorar tanto conceitos de modelagem transacional quanto preparação para análises.
+
+Ao final, a estrutura criada possibilita uma melhor organização dos dados, redução de redundâncias e maior eficiência na realização de consultas.
+
+---
+
+### 🎯 Objetivos Técnicos
+
+- Aplicar normalização (1FN, 2FN e 3FN)
+- Estruturar um modelo relacional consistente
+- Garantir integridade referencial
+- Preparar os dados para análises futuras (camada analítica)
+
+---
+
+## 🔄 Etapas
 
 ### 1. [Etapa I](/Sprint%201/Projeto/Etapa%20-%201/Diagrama%20sem%20nome%20imgem.jpg)
 
-Na Primeira etapa houve a identificação do problema, que era o fato de so haver uma tabela no banco de dados e todos os campos estarem misturados nela. Tendo em vista a problematica e com o intuito de facilitar a visualização do sistema normalizado, a primeira coisa feita foi o Diagrama relacional, que permitiu uma visualização clara das tabelas, de onde cada campo deveria fica e como elas iriam se relacionar
+Nesta etapa, foi realizada a análise da tabela original (`tb_locacao`), onde todos os dados estavam centralizados, gerando redundâncias e dificultando a manutenção.
+
+A partir disso, foi criado um **diagrama relacional**, com o objetivo de:
+
+- Identificar entidades principais  
+- Definir atributos  
+- Estabelecer relacionamentos  
+- Preparar a normalização dos dados  
 
 ![Diagrama](/Sprint%201/Projeto/Etapa%20-%201/Diagrama%20sem%20nome%20imgem.jpg)
 
@@ -11,7 +45,13 @@ Na Primeira etapa houve a identificação do problema, que era o fato de so have
 
 ### 2. [Etapa II](/Sprint%201/Projeto/Etapa%20-%202/CriancaoTabelas.sql)
 
-Após ter feito o diagrama relacional, fica mais facil ir para a segunda etapa, que é a criação das novas Tabelas:
+Com base no modelo relacional, foram criadas as tabelas normalizadas, separando os dados em entidades distintas.
+
+Foram aplicados conceitos como:
+
+- **PRIMARY KEY** para identificação única  
+- **FOREIGN KEY** para relacionamentos  
+- Organização conforme boas práticas
 
 ````sql
 CREATE TABLE combustiveis (
@@ -65,12 +105,22 @@ CREATE TABLE locacoes (
 ### Evidencias do codigo
 
 ![amostra](/Sprint%201/Evidencias/Projeto%20-%20Sprint%201/Codigo1.png)
+![amostra](/Sprint%201/Evidencias/Projeto%20-%20Sprint%201/Diagrama_Tabelas.png)
 
 ---
 
 ### 3. [Etapa III](/Sprint%201/Projeto/Etapa%20-%203/InsercaoDados.sql)
 
-Após a criação das tabelas, o proximo passo foi a inserção de dados, da tabela locacao antiga para as novas tabelas e depois que os dados foram tranferidos, foi feita a exclusão da antiga tabela não normalizada:
+Nesta etapa, foi realizada a migração dos dados da tabela original para as novas tabelas.
+
+O processo incluiu:
+
+- Uso de `SELECT DISTINCT` para evitar duplicidades  
+- Separação dos dados por entidade  
+- Garantia de consistência dos dados  
+- Validação com consultas SQL  
+
+Após a validação, a tabela original foi removida.
 
  ```sql
 INSERT INTO combustiveis (idCombustivel, tipoCombustivel)
@@ -128,7 +178,14 @@ DROP TABLE  tb_locacao
 
 ### 4. [Etapa IV](/Sprint%201/Projeto/Etapa%20-%204/CriacaoViews.sql)
 
-Apos a criação do diagrama relacional, criação das tabelas e a passagem de dados, o ultimo passo é a dimencionalização por meio da criação de views:
+Nesta etapa final, foram criadas **views analíticas** para facilitar consultas e análises.
+
+As views permitem:
+
+- Visualização simplificada dos dados  
+- Cálculo de métricas  
+- Análise de desempenho (clientes, vendedores, carros)  
+- Preparação para consumo analítico
  ```sql
 CREATE VIEW vw_Locacao_Detalhada AS
 SELECT
@@ -216,3 +273,4 @@ GROUP BY idCliente;
 ### Evidencias do codigo
 
 ![amostra2](/Sprint%201/Evidencias/Projeto%20-%20Sprint%201/Codigo3.png)
+![amostra](/Sprint%201/Evidencias/Projeto%20-%20Sprint%201/Diagrama_Views.png)
