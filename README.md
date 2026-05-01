@@ -11,7 +11,7 @@ O desenvolvimento foi dividido em **8 sprints**, cada uma focada em tecnologias 
 
 ---
 
-### 📁 [Sprint 1](/Sprint%201/Projeto/README.md) — Fundamentos de Dados
+### 📁 [Sprint 1](/Sprint%201/README.md) — Fundamentos de Dados
 
 * Git & GitHub
 * SQL
