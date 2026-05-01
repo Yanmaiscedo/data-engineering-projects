@@ -11,9 +11,7 @@ O desenvolvimento foi dividido em **8 sprints**, cada uma focada em tecnologias 
 
 ---
 
-### 🟢 Sprint 1 — Fundamentos de Dados
-
-**🔗 [Sprint 1](/Sprint%201/Projeto/README.md)**
+### 📁 [Sprint 1](/Sprint%201/Projeto/README.md) — Fundamentos de Dados
 
 * Git & GitHub
 * SQL
@@ -22,9 +20,7 @@ O desenvolvimento foi dividido em **8 sprints**, cada uma focada em tecnologias 
 
 ---
 
-### 🟢 Sprint 2 — Análise de Dados com Python
-
-**🔗[Sprint 2]()** 
+### 📁 [Sprint 2]() — Análise de Dados com Python
 
 * Python
 * Jupyter Notebook
@@ -34,9 +30,7 @@ O desenvolvimento foi dividido em **8 sprints**, cada uma focada em tecnologias 
 
 ---
 
-### 🟢 Sprint 3 — Integração e APIs
-
-🔗 [Sprint 3]()
+### 📁 [Sprint 3]() — Integração e APIs
 
 * Docker
 * Postman
@@ -44,9 +38,7 @@ O desenvolvimento foi dividido em **8 sprints**, cada uma focada em tecnologias 
 
 ---
 
-### 🟢 Sprint 4 — Fundamentos de Cloud (AWS)
-
-🔗 [Sprint 4]()
+### 📁 [Sprint 4]() — Fundamentos de Cloud (AWS)
 
 * Amazon S3
 * EC2
@@ -57,9 +49,7 @@ O desenvolvimento foi dividido em **8 sprints**, cada uma focada em tecnologias 
 
 ---
 
-### 🟢 Sprint 5 — Processamento Distribuído
-
-🔗 [Sprint 5]()
+### 📁 [Sprint 5]() — Processamento Distribuído
 
 * Máquina Virtual
 * PySpark
@@ -67,9 +57,7 @@ O desenvolvimento foi dividido em **8 sprints**, cada uma focada em tecnologias 
 
 ---
 
-### 🟢 Sprint 6 — Data Lake (Raw & Trusted)
-
-🔗 [Sprint 6]()
+### 📁 [Sprint 6]() — Data Lake (Raw & Trusted)
 
 * AWS Glue
 * Parquet
@@ -79,9 +67,7 @@ O desenvolvimento foi dividido em **8 sprints**, cada uma focada em tecnologias 
 
 ---
 
-### 🟢 Sprint 7 — Modelagem e Refined
-
-🔗 [Sprint 7]()
+### 📁 [Sprint 7]() — Modelagem e Refined
 
 * AWS Glue
 * Athena
@@ -90,9 +76,7 @@ O desenvolvimento foi dividido em **8 sprints**, cada uma focada em tecnologias 
 
 ---
 
-### 🟢 Sprint 8 — Visualização de Dados
-
-🔗 [Sprint 8]()
+### 📁 [Sprint 8]() — Visualização de Dados
 
 * AWS QuickSight
 * Dashboard final
