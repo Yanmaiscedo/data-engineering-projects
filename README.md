@@ -20,7 +20,7 @@ O desenvolvimento foi dividido em **8 sprints**, cada uma focada em tecnologias 
 
 ---
 
-### 📁 [Sprint 2]() — Análise de Dados com Python
+### 📁 [Sprint 2](/Sprint%202/README.md) — Análise de Dados com Python
 
 * Python
 * Jupyter Notebook
