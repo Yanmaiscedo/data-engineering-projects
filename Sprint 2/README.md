@@ -21,7 +21,15 @@ Durante a atividade, foram explorados conceitos como leitura de dados, limpeza, 
 
 ### 1. [Etapa I](/Sprint%202/Projeto/Projeto_Sprint2.ipynb)
 
-Na Primeira etapa houve a leitura e remoção de linhas duplicadas
+Nesta etapa inicial, foi realizada a **leitura do dataset** e a **remoção de registros duplicados**, garantindo maior qualidade e consistência dos dados para as análises posteriores.
+
+Principais ações:
+
+- Leitura do arquivo CSV  
+- Verificação da quantidade de registros  
+- Identificação e remoção de duplicidades  
+- Visualização inicial dos dados  
+
 
 ````python
 import pandas as pd
@@ -39,7 +47,7 @@ print("Depois:", tabela.shape)
 display(tabela)
 ````
 
-### Evidencias do codigo
+#### 📸 Evidências
 
 ![amostra](/Sprint%202/Evidencias/Projeto/Leitura.png)
 ![amostra](/Sprint%202/Evidencias/Projeto/Exclusao_duplicadas.png)
@@ -48,9 +56,14 @@ display(tabela)
 
 ### 2. [Etapa II](/Sprint%202/Projeto/Projeto_Sprint2.ipynb)
 
-Depois de tratar os Dados, foi feito as análises
+Após o tratamento inicial, foram realizadas análises exploratórias com o objetivo de extrair insights relevantes a partir dos dados.
 
-**Top 5 Apps por Número de Instalações**
+#### 📊 Top 5 Apps por Número de Instalações
+
+- Conversão da coluna de instalações para formato numérico  
+- Ordenação dos dados  
+- Seleção dos aplicativos com maior número de downloads  
+
 
 ````python
 tabela['Installs'] = tabela['Installs'].astype(str)
@@ -70,13 +83,16 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 ````
-### Evidencias do codigo
+ **📸 Evidência:**
 
 ![amostra](/Sprint%202/Evidencias/Projeto/Etapa2.png)
 
 ---
 
-**Apps por Categoria**
+#### 📊 Distribuição de Apps por Categoria
+
+- Contagem de aplicativos por categoria  
+- Visualização com gráfico de pizza (Top 10 categorias)  
 
 ````python
 categorias = tabela['Category'].value_counts()
@@ -94,13 +110,17 @@ plt.tight_layout()
 plt.show()
 ````
 
-### Evidencias do codigo
+ **📸 Evidência:**
 
 ![amostra](/Sprint%202/Evidencias/Projeto/Etapa3.png)
 
 ---
 
-**App Mais Caro**
+#### 💰 App Mais Caro
+
+- Conversão da coluna de preço para valor numérico  
+- Identificação do aplicativo com maior preço  
+- Estimativa de receita com base no número de instalações  
 
 ````python
 tabela['Price'] = tabela['Price'].astype(str).str.replace('$', '', regex=False)
@@ -118,13 +138,17 @@ print(app_mais_caro[['App', 'Price', 'Installs']])
 print(f"\n Receita estimada: ${renda_estimada:,.2f}")
 ````
 
-### Evidencias do codigo
+ **📸 Evidência:**
 
 ![amostra](/Sprint%202/Evidencias/Projeto/Etapa4.png)
 
 ---
 
-**Apps classificados como 'Mature 17+'?**
+#### 🔞 Apps classificados como "Mature 17+"
+
+- Filtragem dos aplicativos com classificação indicativa específica  
+- Análise de categorias e volume de instalações  
+- Identificação dos principais apps desse grupo  
 
 ````python
 mature_apps = tabela[tabela['Content Rating'] == 'Mature 17+']
@@ -139,7 +163,7 @@ display(top5_mature_unicos[['App', 'Installs']])
 print(mature_apps['Category'].value_counts())
 ````
 
-### Evidencias do codigo
+ **📸 Evidência:**
 
 ![amostra](/Sprint%202/Evidencias/Projeto/Etapa5.1.png)
 ![amostra](/Sprint%202/Evidencias/Projeto/Etapa5.2.png)
@@ -148,7 +172,11 @@ print(mature_apps['Category'].value_counts())
 
 ---
 
-**Top 10 Apps por Reviews**
+#### ⭐ Top 10 Apps por Reviews
+
+- Conversão da coluna de reviews para numérico  
+- Ordenação por volume de avaliações  
+- Seleção dos aplicativos com maior engajamento  
 
 ````python
 tabela['Reviews'] = pd.to_numeric(tabela['Reviews'], errors='coerce')
@@ -159,7 +187,7 @@ top10_reviews_unicos = ordenado_por_reviews.drop_duplicates(subset='App', keep='
 display(top10_reviews_unicos[['App', 'Reviews']])
 ````
 
-### Evidencias do codigo
+ **📸 Evidência:**
 
 ![amostra](/Sprint%202/Evidencias/Projeto/Etapa6.png)
 
@@ -167,9 +195,14 @@ display(top10_reviews_unicos[['App', 'Reviews']])
 
 ### 3. [Etapa III](/Sprint%202/Projeto/Projeto_Sprint2.ipynb)
 
-Depois de ter feito as análises propostas, a última etapa é fazer análises extras
+Nesta etapa final, foram realizadas análises complementares com foco em geração de insights mais aprofundados.
 
-**App com Mais Reviews das Top 10 categorias**
+---
+
+#### 📊 App com Mais Reviews por Categoria
+
+- Identificação do aplicativo com maior número de avaliações em cada categoria  
+- Seleção das categorias com maior relevância  
 
 ````python
 tabela['Reviews'] = pd.to_numeric(tabela['Reviews'], errors='coerce')
@@ -196,13 +229,17 @@ plt.tight_layout()
 plt.show()
 ````
 
-### Evidencias do codigo
+**📸 Evidência:**
 
 ![amostra](/Sprint%202/Evidencias/Projeto/Extra1.png)
 
 ---
 
-**As Top 7 categorias com maior lucro médio**
+#### 💰 Top 7 Categorias com Maior Lucro Médio
+
+- Cálculo de receita estimada (preço × instalações)  
+- Agrupamento por categoria  
+- Identificação das categorias mais lucrativas  
 
 ````python
 tabela['Price'] = tabela['Price'].astype(str).str.replace('$', '', regex=False)
@@ -230,13 +267,17 @@ plt.tight_layout()
 plt.show()
 ````
 
-### Evidencias do codigo
+**📸 Evidência:**
 
 ![amostra](/Sprint%202/Evidencias/Projeto/Extra2.png)
 
 ---
 
-**As Top 7 categorias que mais lucraram com maior Numero de reviews**
+#### 📈 Categorias com Mais Reviews vs Lucro
+
+- Seleção das categorias com maior volume de reviews  
+- Análise do lucro médio dessas categorias  
+- Comparação entre popularidade e monetização  
 
 ````python
 tabela['Price'] = tabela['Price'].astype(str).str.replace('$', '', regex=False)
@@ -278,13 +319,17 @@ plt.tight_layout()
 plt.show()
 ````
 
-### Evidencias do codigo
+**📸 Evidência:**
 
 ![amostra](/Sprint%202/Evidencias/Projeto/Extra3.png)
 
 ---
 
-**Apps Gratuitos vs Pagos**
+#### 🆓 Apps Gratuitos vs Pagos
+
+- Comparação entre aplicativos gratuitos e pagos  
+- Análise da média de reviews  
+- Visualização da distribuição entre os tipos  
 
 ````python
 plt.figure(figsize=(6, 6))
@@ -306,6 +351,25 @@ plt.tight_layout()
 plt.show()
 ````
 
-### Evidencias do codigo
+**📸 Evidência:**
 
 ![amostra](/Sprint%202/Evidencias/Projeto/Extra4.png)
+
+---
+
+## 📊 Resultados
+
+- Dados tratados e livres de duplicidade  
+- Identificação de padrões de instalação e engajamento  
+- Análises de categorias mais populares e lucrativas  
+- Geração de insights sobre comportamento de usuários  
+
+---
+
+## 🧠 Aprendizados
+
+- Manipulação e limpeza de dados com Pandas  
+- Conversão e tratamento de tipos de dados  
+- Criação de visualizações com Matplotlib  
+- Análise exploratória de dados (EDA)  
+- Interpretação de métricas de negócio  
