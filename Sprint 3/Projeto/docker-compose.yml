@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  etl:
+    build:
+      context: ./Etapa 1
+    container_name: etl_cleanup
+    volumes:
+      - ./Etapa 2:/data
+      - ./Etapa 1:/app
+    working_dir: /app
+    command: ["python", "etl.py"]
+
+  job:
+    build:
+      context: ./Etapa 2
+    container_name: job_analysis
+    volumes:
+      - ./Etapa 2:/app
+      - ./volume:/app/volume
+    depends_on:
+      - etl
+    working_dir: /app
+    command: ["sh", "-c", "while [ ! -f csv_limpo.csv ]; do sleep 1; done; python job.py"]
