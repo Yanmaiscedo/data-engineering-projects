@@ -30,7 +30,7 @@ O desenvolvimento foi dividido em **8 sprints**, cada uma focada em tecnologias 
 
 ---
 
-### 📁 [Sprint 3]() — Integração e APIs
+### 📁 [Sprint 3](/Sprint%203/README.md) — Integração e APIs
 
 * Docker
 * Postman
