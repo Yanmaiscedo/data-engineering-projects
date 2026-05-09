@@ -1,18 +1,45 @@
-# Resumo da Sprint
+# 🚀 Projeto
 
-**Docker:** Em relação a Docker, aprendi a utilizar Docker para criar e gerenciar containers, construir imagens com Dockerfile e orquestrar serviços com docker-compose, facilitando o desenvolvimento e a automação de aplicações. No Docker Desktop, acompanhei visualmente o estado de containers, volumes e redes. Com o Postman, testei APIs REST usando requisições como GET e POST, analisando respostas e interações com servidores. Já com Linux, aprendi comandos básicos de terminal, manipulação de arquivos e permissões, o que me ajudou a operar sistemas e ambientes de forma mais eficiente, especialmente em servidores e containers.
+O projeto teve como objetivo aplicar, na prática, os conceitos estudados durante a sprint, utilizando Docker para automatizar um processo de ETL e análise de dados.
 
+A aplicação foi estruturada em múltiplos containers, permitindo separar responsabilidades entre etapas de limpeza e processamento de dados.
 
-## Projeto
+Durante o desenvolvimento, foi possível compreender:
 
-**Projeto:** O projeto possibilitou a compreensão prática de como funciona a criação e execução de containers utilizando o Docker, além da construção de imagens com Dockerfile e a orquestração de múltiplos serviços com o docker-compose. Também foi possível entender como compartilhar volumes entre containers para troca de arquivos e como automatizar etapas de um processo de ETL com scripts Python integrados em diferentes containers. A atividade reforçou o uso do Docker Desktop como ferramenta de apoio e proporcionou uma visão clara de como organizar aplicações em ambientes isolados e reutilizáveis.
+- Como criar imagens Docker personalizadas  
+- Como executar scripts Python em containers  
+- Como compartilhar arquivos entre containers utilizando volumes  
+- Como automatizar fluxos utilizando Docker Compose  
+- Como estruturar aplicações em ambientes isolados e reutilizáveis  
 
-# Etapas
+---
 
+## 🎯 Objetivos Técnicos
 
-### 1. [Etapa I](/Sprint%203/Projeto/Etapa%201/etl.py)
+- Aplicar conceitos de containerização  
+- Automatizar execução de processos ETL  
+- Compartilhar dados entre containers  
+- Utilizar Docker Compose para orquestração  
+- Processar e analisar dados com Python  
 
-Na Primeira etapa houve a leitura do arquivo concert_tours_by_women.csv e a limpeza do mesmo, que gerou um arquivo csv_limpo.csv
+---
+
+# 🔄 Etapas
+
+### 1. [Etapa I](/Sprint%203/Projeto/Etapa%201/etl.py) — Limpeza e Tratamento dos Dados  
+
+Na primeira etapa, foi realizada a leitura do dataset `concert_tours_by_women.csv`, seguida pelo processo de limpeza e padronização dos dados.
+
+As principais transformações realizadas foram:
+
+- Remoção de espaços em nomes de colunas  
+- Separação dos anos inicial e final das turnês  
+- Tratamento de valores nulos  
+- Conversão de colunas monetárias para formato numérico  
+- Padronização de tipos de dados  
+- Criação de ranking baseado no faturamento ajustado  
+
+Ao final do processo, foi gerado o arquivo `csv_limpo.csv`, utilizado nas próximas etapas do pipeline.
 
 ````python
 import pandas as pd
@@ -75,15 +102,31 @@ tabela_filtrada.to_csv("/data/csv_limpo.csv", index=False)
 print("Arquivo 'csv_limpo.csv' gerado com sucesso.")
 ````
 
-### Evidencias do codigo
+### 📸 Evidências
 
 * [amostra](/Sprint%203/Evidencias/Projeto/Codigo/Projeto.ipynb)
 
 ---
 
-### 2. [Etapa II](/Sprint%203/Projeto/Etapa%202/job.py)
+### 2. [Etapa II](/Sprint%203/Projeto/Etapa%202/job.py) — Análise de Dados  
 
-Depois de tratar os Dados, foi feito as análises e foram gerados os arquivos respostas.txt, Q4.png e Q5.png
+Após o tratamento dos dados, foi iniciado o processo de análise exploratória.
+
+Nesta etapa, foram realizadas análises relacionadas a:
+
+- Artista mais frequente no dataset  
+- Média de faturamento bruto  
+- Turnês de maior desempenho  
+- Valor médio arrecadado por show  
+- Quantidade total de shows por artista  
+
+Além das análises textuais, também foram gerados gráficos para visualização dos resultados.
+
+Arquivos gerados:
+
+- `respostas.txt`
+- `Q4.png`
+- `Q5.png`
 
 ````python
 import pandas as pd
@@ -137,15 +180,22 @@ plt.savefig("/app/volume/Q5.png")
 plt.close()
 ````
 
-### Evidencias do codigo
+### 📸 Evidências
 
 * [amostra](/Sprint%203/Evidencias/Projeto/Codigo/Projeto.ipynb)
 
 ---
 
-### 3. [Etapa III](/Sprint%203/Projeto/Etapa%201/Dockerfile)
+### 3. [Etapa III](/Sprint%203/Projeto/Etapa%201/Dockerfile) — Dockerização da Etapa ETL  
 
-Depois de ter feito o arquivo etl.py, foi necessario fazer o arquivo Dockerfile que irá rodá-lo
+Após a criação do script de ETL, foi desenvolvido um Dockerfile responsável por construir a imagem da aplicação de limpeza e tratamento de dados.
+
+Nesta etapa, foi possível:
+
+- Criar uma imagem baseada em Python  
+- Configurar ambiente de execução  
+- Instalar dependências necessárias  
+- Automatizar a execução do script ETL  
 
 ````Dockerfile
 FROM python:3.11-slim
@@ -159,15 +209,23 @@ RUN pip install pandas
 CMD ["python", "etl.py"]
 ````
 
-### Evidencias do codigo
+### 📸 Evidências
 
 ![amostra](/Sprint%203/Evidencias/Projeto/ProjetoResultado.png)
 
 ---
 
-### 4. [Etapa IV](/Sprint%203/Projeto/Etapa%202/Dockerfile)
+### 4. [Etapa IV](/Sprint%203/Projeto/Etapa%202/Dockerfile) — Dockerização da Etapa Analítica  
 
-E depois de ter feito o arquivo job.py, foi necessario fazer o arquivo Dockerfile que irá rodá-lo
+Após a construção do processo ETL, foi criado um segundo Dockerfile voltado para execução da etapa analítica.
+
+O container foi responsável por:
+
+- Ler os dados tratados  
+- Executar análises exploratórias  
+- Gerar arquivos de saída  
+- Produzir gráficos automaticamente  
+
 
 ````Dockerfile
 FROM python:3.11-slim
@@ -181,16 +239,26 @@ RUN pip install pandas matplotlib seaborn
 CMD ["python", "job.py"]
 ````
 
-### Evidencias do codigo
+### 📸 Evidências
 
 ![amostra](/Sprint%203/Evidencias/Projeto/ProjetoResultado.png)
 
 ---
 
 
-### 5. [Etapa V](/Sprint%203/Projeto/docker-compose.yml)
+### 5. [Etapa V](/Sprint%203/Projeto/docker-compose.yml) — Orquestração com Docker Compose  
 
-Depois de ter feito os Dockerfiles, chegou a ultima etapa, que é o arquivo docker-compose que ira gerenciar toda a aplicação
+Na etapa final, foi utilizado o Docker Compose para orquestrar toda a aplicação.
+
+A configuração permitiu:
+
+- Execução coordenada dos containers  
+- Compartilhamento de volumes entre serviços  
+- Dependência entre etapas do pipeline  
+- Automatização completa da execução  
+
+Com isso, o pipeline passou a funcionar de forma integrada e reutilizável.
+
 
 ````yml
 version: "3.8"
@@ -220,7 +288,28 @@ services:
 
 ````
 
-### Evidencias do codigo
+### 📸 Evidências
 
 ![amostra](/Sprint%203/Evidencias/Projeto/ProjetoResultado.png)
 ![amostra](/Sprint%203/Evidencias/Projeto/ProjetoResultado2.png)
+
+---
+
+# 📊 Resultados
+
+- Pipeline ETL automatizado com Docker  
+- Processamento de dados em containers isolados  
+- Compartilhamento de arquivos entre serviços  
+- Geração automática de análises e gráficos  
+- Estrutura reutilizável e escalável  
+
+---
+
+# 🧠 Aprendizados
+
+- Criação e gerenciamento de containers Docker  
+- Construção de imagens com Dockerfile  
+- Orquestração com Docker Compose  
+- Manipulação e análise de dados com Python  
+- Compartilhamento de volumes entre containers  
+- Automação de pipelines ETL 
