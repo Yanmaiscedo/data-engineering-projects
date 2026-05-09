@@ -1,8 +1,19 @@
-# 📌 Introdução
+# 🚀 Projeto
 
-Este projeto teve como objetivo desenvolver habilidades práticas em **análise de dados com Python**, utilizando bibliotecas como Pandas e Matplotlib dentro do ambiente Jupyter Notebook.
+Este projeto teve como objetivo aplicar conceitos de **análise e visualização de dados com Python**, utilizando bibliotecas como **Pandas** e **Matplotlib** dentro do ambiente Jupyter Notebook, a partir de um dataset real da Google Play Store.
 
-Durante a atividade, foram explorados conceitos como leitura de dados, limpeza, transformação e geração de visualizações para extração de insights.
+Durante o desenvolvimento, foi realizado um processo completo de tratamento e exploração dos dados, incluindo:
+
+- Leitura e limpeza do dataset  
+- Remoção de registros duplicados  
+- Conversão e padronização de tipos de dados  
+- Análise exploratória de informações relevantes  
+- Criação de gráficos para visualização de padrões e tendências  
+- Geração de insights sobre popularidade, categorias e monetização de aplicativos  
+
+O projeto permitiu explorar métricas relacionadas a instalações, reviews, categorias, faturamento estimado e comportamento dos aplicativos disponíveis na plataforma.
+
+Ao final, as análises desenvolvidas possibilitaram uma melhor compreensão dos dados e demonstraram como técnicas de tratamento e visualização podem auxiliar na extração de insights e apoio à tomada de decisão.
 
 ---
 
