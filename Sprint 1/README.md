@@ -1,4 +1,4 @@
-# 📌 Introdução
+# 🚀 Projeto
 
 Este projeto tem como objetivo aplicar conceitos de **modelagem de dados relacional** e **normalização de banco de dados**, a partir de um cenário real onde os dados estavam originalmente concentrados em uma única tabela não estruturada.
 
