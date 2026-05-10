@@ -1,16 +1,21 @@
 # 🚀 Projeto
 
-O projeto teve como objetivo aplicar, na prática, os conceitos estudados durante a sprint, utilizando Docker para automatizar um processo de ETL e análise de dados.
+Este projeto teve como objetivo aplicar conceitos de **containerização, automação de processos ETL e análise de dados**, utilizando Docker para estruturar e executar aplicações em ambientes isolados e reutilizáveis.
 
-A aplicação foi estruturada em múltiplos containers, permitindo separar responsabilidades entre etapas de limpeza e processamento de dados.
+A partir de um dataset contendo informações sobre turnês musicais femininas, foi desenvolvido um pipeline dividido em etapas de limpeza, transformação e análise de dados, permitindo automatizar todo o fluxo utilizando múltiplos containers.
 
-Durante o desenvolvimento, foi possível compreender:
+Durante o desenvolvimento, foram aplicados conceitos como:
 
-- Como criar imagens Docker personalizadas  
-- Como executar scripts Python em containers  
-- Como compartilhar arquivos entre containers utilizando volumes  
-- Como automatizar fluxos utilizando Docker Compose  
-- Como estruturar aplicações em ambientes isolados e reutilizáveis  
+- Criação de imagens personalizadas com Dockerfile  
+- Execução de scripts Python em containers  
+- Compartilhamento de arquivos entre containers utilizando volumes  
+- Orquestração de serviços com Docker Compose  
+- Automação de etapas de processamento e análise de dados  
+- Geração de arquivos analíticos e visualizações gráficas  
+
+O projeto permitiu compreender como aplicações podem ser organizadas em ambientes isolados, facilitando a portabilidade, escalabilidade e reutilização dos processos.
+
+Ao final, foi construído um pipeline automatizado capaz de realizar o tratamento dos dados, executar análises e gerar arquivos de saída de forma integrada e reutilizável.
 
 ---
 
@@ -104,7 +109,7 @@ print("Arquivo 'csv_limpo.csv' gerado com sucesso.")
 
 ### 📸 Evidências
 
-* [amostra](/Sprint%203/Evidencias/Projeto/Codigo/Projeto.ipynb)
+* [amostra](/Sprint%203/Evidencias/Projeto/Codigo/projeto.ipynb)
 
 ---
 
@@ -182,7 +187,7 @@ plt.close()
 
 ### 📸 Evidências
 
-* [amostra](/Sprint%203/Evidencias/Projeto/Codigo/Projeto.ipynb)
+* [amostra](/Sprint%203/Evidencias/Projeto/Codigo/projeto.ipynb)
 
 ---
 
@@ -211,7 +216,7 @@ CMD ["python", "etl.py"]
 
 ### 📸 Evidências
 
-![amostra](/Sprint%203/Evidencias/Projeto/ProjetoResultado.png)
+![amostra](/Sprint%203/Evidencias/Projeto/projetoResultado.png)
 
 ---
 
@@ -241,7 +246,7 @@ CMD ["python", "job.py"]
 
 ### 📸 Evidências
 
-![amostra](/Sprint%203/Evidencias/Projeto/ProjetoResultado.png)
+![amostra](/Sprint%203/Evidencias/Projeto/projetoResultado.png)
 
 ---
 
@@ -290,8 +295,8 @@ services:
 
 ### 📸 Evidências
 
-![amostra](/Sprint%203/Evidencias/Projeto/ProjetoResultado.png)
-![amostra](/Sprint%203/Evidencias/Projeto/ProjetoResultado2.png)
+![amostra](/Sprint%203/Evidencias/Projeto/projetoResultado.png)
+![amostra](/Sprint%203/Evidencias/Projeto/projetoResultado2.png)
 
 ---
 
