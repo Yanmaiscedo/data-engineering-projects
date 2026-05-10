@@ -1,0 +1,4 @@
+Resumo de metas atingidas:
+atingiu_meta
+Atingiram a meta    756
+Não atingiram        47
