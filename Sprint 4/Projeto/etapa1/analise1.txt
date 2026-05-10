@@ -1,0 +1,7 @@
+Top 5 órgãos que mais economizaram energia:
+sigla_orgao
+UNIPAMPA     -97.305961
+IFTO         -76.988697
+IFSertaoPE   -73.673643
+IBRAM        -73.240888
+Unifesspa    -72.965819

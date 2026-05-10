@@ -1,0 +1,28 @@
+ANÁLISE 4: Justificativas dos órgãos que não atingiram a meta (Top 5)
+
+Órgão: Agência Espacial Brasileira
+Consumo médio histórico: 159 kWh
+Consumo atual: 205 kWh
+Justificativa: Primeiro é que os aparelhos de ar condicionados da AEB ainda são antigos, 90%(noventa por cento), ainda são de janelas.
+Segundo é que 70% (setenta por centos) dos funcionários da AEB não fizeram Home Office. 
+----------------------------------------
+Órgão: Fundação Nacional de Saúde
+Consumo médio histórico: 605 kWh
+Consumo atual: 630 kWh
+Justificativa: justificamos que o não atingimento da economia de ao menos 10% em Setembro se deu devido ao aumento da demanda estabelecida no contrato que ocorreu com o retorno das atividades institucionais ao edifício sede, gerando assim, o aumento no consumo de energia, tendo em vista a utilização de elevadores, computadores, iluminação em geral,
+----------------------------------------
+Órgão: Instituto Federal de Educação, Ciência e Tecnologia do Espírito Santo
+Consumo médio histórico: 744624 kWh
+Consumo atual: 3760992 kWh
+Justificativa: nan
+----------------------------------------
+Órgão: Agência Espacial Brasileira
+Consumo médio histórico: 156 kWh
+Consumo atual: 205 kWh
+Justificativa: As mesmas justificativas que dei no item anterior referente a setembro.
+----------------------------------------
+Órgão: Fundação Nacional de Saúde
+Consumo médio histórico: 650 kWh
+Consumo atual: 750 kWh
+Justificativa: Devido ao aumento da demanda estabelecida no contrato que se deu com o retorno das atividades institucionais ao edifício sede, gerando assim, o aumento no consumo de energia, tendo em vista a utilização de elevadores, computadores, iluminação em geral.
+----------------------------------------
