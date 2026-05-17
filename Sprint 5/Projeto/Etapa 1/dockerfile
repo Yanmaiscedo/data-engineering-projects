@@ -1,0 +1,18 @@
+# Usa a imagem oficial do Python 3.9 para o container.
+FROM python:3.9-slim-buster
+
+# Define o diretório de trabalho como /app.
+WORKDIR /app
+
+# Copia o script para o container.
+COPY upload_script.py .
+
+# Copia os arquivos de dados para o container, na pasta /data/.
+COPY movies.csv /data/
+COPY series.csv /data/
+
+# Instala a biblioteca 'boto3'.
+RUN pip install boto3
+
+# Define o comando para rodar o script quando o container iniciar.
+CMD ["python", "upload_script.py"]
