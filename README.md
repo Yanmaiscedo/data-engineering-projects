@@ -49,7 +49,7 @@ O desenvolvimento foi dividido em **8 sprints**, cada uma focada em tecnologias 
 
 ---
 
-### 📁 [Sprint 5]() — Processamento Distribuído
+### 📁 [Sprint 5](/Sprint%205/README.md) — Processamento Distribuído
 
 * Máquina Virtual
 * PySpark
@@ -57,7 +57,7 @@ O desenvolvimento foi dividido em **8 sprints**, cada uma focada em tecnologias 
 
 ---
 
-### 📁 [Sprint 6]() — Data Lake (Raw & Trusted)
+### 📁 [Sprint 6](/Sprint%206/README.md) — Data Lake (Raw & Trusted)
 
 * AWS Glue
 * Parquet
