@@ -67,7 +67,7 @@ O desenvolvimento foi dividido em **8 sprints**, cada uma focada em tecnologias 
 
 ---
 
-### 📁 [Sprint 7]() — Modelagem e Refined
+### 📁 [Sprint 7](/Sprint%207/README.md) — Modelagem e Refined
 
 * AWS Glue
 * Athena
